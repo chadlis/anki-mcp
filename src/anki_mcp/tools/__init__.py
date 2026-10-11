@@ -9,7 +9,7 @@ from __future__ import annotations
 from fastmcp import FastMCP
 
 from ..client import AnkiConnectClient
-from . import decks, models, notes, system
+from . import decks, models, notes, organize, system
 
 
 def register_all(mcp: FastMCP, client: AnkiConnectClient) -> None:
@@ -18,6 +18,7 @@ def register_all(mcp: FastMCP, client: AnkiConnectClient) -> None:
     decks.register(mcp, client)
     models.register(mcp, client)
     notes.register(mcp, client)
+    organize.register(mcp, client)
 
 
 __all__ = ["register_all"]

@@ -264,4 +264,7 @@ async def test_all_expected_tools_are_registered(mcp: FastMCP) -> None:
         "anki_find_notes",
         "anki_get_notes_info",
         "anki_update_note_fields",
+        "anki_add_tags",
+        "anki_remove_tags",
+        "anki_suspend",
     }

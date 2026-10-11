@@ -65,7 +65,8 @@ Source lives under `src/anki_mcp/` (src-layout, installed package):
   It imports **absolutely** (`from anki_mcp.client import …`) because
   `fastmcp inspect` loads the file as a standalone module, where relative
   imports have no parent package.
-- `tools/` — one module per domain (`system`, `decks`, `models`, `notes`). Each
+- `tools/` — one module per domain (`system`, `decks`, `models`, `notes`,
+  `organize` — tags on notes, suspension on cards). Each
   exposes `register(mcp, client)`; `tools/__init__.py:register_all()` wires them
   all. Shared annotation dicts live in `tools/_common.py`.
 
@@ -98,6 +99,9 @@ as a closure over `client`, and ensure the module is called from `register_all`.
 - Anki stops serving AnkiConnect requests while a **modal dialog** is open, which
   surfaces as a timeout.
 - Deck and tag nesting both use `::`. Tags cannot contain spaces.
+- Tags are on **notes**, suspension is on **cards**: `addTags`/`removeTags` take
+  note ids and one space-separated string; `suspend`/`unsuspend` take card ids,
+  which `anki_suspend` resolves from a query with `findCards`.
 
 ## Environment variables
 

@@ -21,6 +21,8 @@ Note fields are HTML and are passed through verbatim, so cards can be generated 
 - `anki_add_note` — add one note (fields are HTML, sent unescaped)
 - `anki_add_notes` — add a batch sharing one deck and note type
 - `anki_update_note_fields` — overwrite fields of an existing note
+- `anki_add_tags` / `anki_remove_tags` — tag or untag notes by id
+- `anki_suspend` — suspend (or unsuspend) every card matching a search query
 - `anki_sync` — sync the collection with AnkiWeb
 
 ## Requirements
